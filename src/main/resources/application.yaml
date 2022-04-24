@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /state-machine
+  port: 8080
+  error:
+    include-message: always
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin
+    url: jdbc:postgresql://localhost:5432/state_machine
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    baselineVersion: 0.0.0.0
+    baselineOnMigrate: true
+    enabled: true
